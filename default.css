@@ -1,0 +1,52 @@
+body {
+    background-image: url('Home-BG.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h3 {
+    color: white;
+
+    text-shadow:
+            0.1em 0 black,
+            0 0.1em black,
+            -0.1em 0 black,
+            0 -0.1em black;
+}
+@keyframes mymove {
+    0%{left: 0%;}
+    50% {left: 90%;}
+    100%{left:0%;}
+}
+
+#div1 {
+    animation-timing-function: linear;
+    position: absolute;
+    animation: mymove 5s infinite;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+}
