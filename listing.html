@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="default.css">
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="default.js"></script>
 </head>
 <body>
 
@@ -51,23 +53,42 @@
 </div>
 <!-- Comment template -->
 
+<div class="container border">
+    <!-- First row -->
+    <div class="row bg-primary">
+        <!-- First column -->
+        <div class="col bg-white" id="Holder1">
+            <!-- First Card Holder -->
+<!--            <div class="container bg-danger p-3" >-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- First div holder for results -->
 <div class="container border">
     <!-- First row -->
     <div class="row bg-primary">
         <!-- First column -->
-        <div class="col-4 bg-white ">
+        <div class="col bg-white ">
             <!-- First Card Holder -->
-            <div class="container bg-danger p-3" id="Holder1">
+            <div class="container bg-danger p-3" id="Holder2">
                 <!-- First Card -->
                 <div class="container bg-dark p-2" id="card1">
                     <!-- First Card Picture -->
-                    <div class="container bg-info">
-                        <p id="PH1Image">Place holder text for image</p>
+                    <div class="container bg-info" type="button" onclick="detailLink(this.id)">
+                        <p id="img1">Place holder text for image</p>
                     </div>
                     <!-- First Card Summary -->
                     <div class="container bg-primary">
-                        <p id="PH1Text">Placeholder Summary text</p>
+                        <p id="price1">Price: </p>
+                        <p id="bed1">Bed: </p>
+                        <p id="bath1">Bath: </p>
+                        <p id="sqft1">Sq. Ft. : </p>
+                        <p id="address1">Located: </p>
                     </div>
                 </div>
             </div>
@@ -180,7 +201,61 @@
 
 </div>
 <script>
-    <!-- Scripts -->
+//     function getData() {
+//         let xhttp = new XMLHttpRequest();
+//         xhttp.open("GET", "http://3.21.225.172:8080/api/realestate/all");
+//         xhttp.send();
+//         xhttp.onload = function() {
+//             const houseData = JSON.parse(xhttp.responseText);
+//            // console.log(houseData);
+//             houseCard(houseData)
+//         };
+//        // console.log( xhttp)
+//     };
+//
+// function houseCard(data){
+//     //Define all reuseable variables that will be pasted as HTML code later
+//     let divStart1 = "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='";
+//     let divStart2 = " ' </div><div class='bg-primary'><p>Price: $";
+//     let imgStart = "<img width='100%' src='";
+//     let url = "http://3.21.225.172:8080/api/"
+//     for (let i = 0; i < 90; i++) {
+//         //define the card to be repeated
+//         var card =
+//             "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='"+ url + data[i].imageurl +
+//             " ' </div><div class='bg-primary'><p>Price: $" +
+//             data[i].price +"</p><p>" + data[i].beds + " Bed    " +data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
+//             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].id + " " + data[i].zip +"</p></div></div>"
+//
+// console.log(url);
+//         console.log(card);
+//         $("#Holder1").append(card);
+//     }
+//
+//     // console.log(card);
+    // $("#Holder1").append(card);
+
+
+getData1();
+//getData3();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function update_data()
     { //// const record_count = parseInt(document.getElementById("num_rec").value);
         const url = "http://3.21.225.172:8080/api/";
@@ -199,17 +274,11 @@
 //                      //of this one. We are able to manipulate specific values from here and do
 //                      //my placeholder update stuffs
                      var card =
-                         "<div class='bg-dark p-3'>" +
-                         "<div class='bg-info'>" +
-                         "<img width='100%' src='"+ url + item.imageurl + " ' " +
-                         "</div>" +
-                         "<div class='bg-primary'>" + "<p>Price: $" + item.price +"</p>"+
-                         "<p>" + item.beds + " Bed    " +item.baths + " Bath  " + item.sqft+ " Sq.ft</p>" +
-                         "<p>" + item.street + "<br>"+ item.city + ", " + item.state + " " + item.zip +"</p>"
-                          "</div>" +
-
-
-                         "</div>"
+                         "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='"+
+                         url + item.imageurl +
+                         " ' </div><div class='bg-primary'><p>Price: $" +
+                         item.price +"</p><p>" + item.beds + " Bed    " +item.baths + " Bath  " + item.sqft+ " Sq.ft</p>" +
+                         "<p>" + item.street + "<br>"+ item.city + ", " + item.state + " " + item.zip +"</p></div></div>"
 
                          //
                          // //Previous testing code
@@ -244,7 +313,7 @@
 
 
     }
-    update_data();
+   // update_data();
 
 </script>
 </body>

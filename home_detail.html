@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="default.js"></script>
 </head>
 <body>
 <!-- Navigation bar information -->
@@ -42,9 +44,9 @@
 <!-- Search Nav bar -->
 <div class="navbar bg-light">
     <form class="form-inline" >
-        <input class="form-control mr-sm-2" type="number" placeholder="Price:Lower" id="pLower">
-        <input class="form-control mr-sm-2" type="number" placeholder="Price:Upper" id="pUpper">
-        <button class="btn btn-success" type="button">Filter</button>
+        <input class="form-control mr-sm-2" type="number" placeholder="Price:Lower" id="pLower" value="">
+        <input class="form-control mr-sm-2" type="number" placeholder="Price:Upper" id="pUpper" value="">
+        <button class="btn btn-success" type="button" onclick="houseDetail()">Filter</button>
     </form>
 </div>
 
@@ -52,28 +54,35 @@
 <div class="container bg-success">
     <div class="row p-3">
         <div class="col-12 bg-light">
-            <p>Place holder Image</p>
+            <p id="img">Placeholder for ID and image</p>
         </div>
     </div>
     <div class="row p-3">
         <div class="col-7 bg-info">
             <div class="container bg-danger">
-                <p>Place holder for price</p>
-                <p>Place holder for Estimate</p>
-                <p>Place holder Bed</p>
-                <p>Bath</p>
-                <p>Beyond</p>
-                <p>Address using backticks for each field</p>
-                <p>Current Sales rep name and number</p>
+                <p id="price" class="bg-success">Total Price:</p>
+                <p class=""></p>
+                <p id="bed">Total Bedrooms:</p>
+                <p id="bath">Total Bathrooms:</p>
+                <p id="address"></p>
+                <p id="rep">Current Sales rep: </p>
+                <p id="repPhone">Phone # </p>
+                <p id="yrBlt">Year Built: </p>
+                <p id="id">Id:</p>
 
             </div>
-            <p>Placeholder for company</p>
+            <p id="company">Brought to you by: </p>
         </div>
         <div class="col-5 bg-primary">
             <p>Place holder for maps</p>
         </div>
     </div>
 </div>
+
+<script>
+    getData2();
+    ;
+</script>
 
 </body>
 </html>
