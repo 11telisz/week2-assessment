@@ -9,17 +9,6 @@ function getData1() {
     };
     // console.log( xhttp)
 };
-function getData3() {
-    let xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://3.21.225.172:8080/api/realestate/all");
-    xhttp.send();
-    xhttp.onload = function() {
-        const houseData = JSON.parse(xhttp.responseText);
-        // console.log(houseData);
-        highestPrice(houseData)
-    };
-    // console.log( xhttp)
-};
 
 function getData2() {
     let xhttp = new XMLHttpRequest();
@@ -32,6 +21,19 @@ function getData2() {
     };
     // console.log( xhttp)
 };
+
+function getData3() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://3.21.225.172:8080/api/realestate/all");
+    xhttp.send();
+    xhttp.onload = function() {
+        const houseData = JSON.parse(xhttp.responseText);
+        // console.log(houseData);
+        highestPrice(houseData)
+    };
+    // console.log( xhttp)
+};
+
 function getData4() {
     //This function is on our filter button since we need to request the data and define it again.
     let xhttp = new XMLHttpRequest();
@@ -47,20 +49,20 @@ function getData4() {
 
 function houseCard(data){
     //Define all reuseable variables that will be pasted as HTML code later
-    let divStart1 = "<div class='container  bg-danger p-3' ><div class='bg-dark p-3'><div class='bg-info'><a href='home_detail.html?";
+    let divStart1 = "<div class='color2  p-3'><div class='bg-info'><a href='home_detail.html?";
     let html1 = "'><img  width='100%' src='";
-    let divStart2 =  " ' ></img></a> </div><div class='bg-primary'>" ;
+    let divStart2 =  " ' ></img></a> </div><div class='color3 '>" ;
     let imgStart = "<img width='100%' src='";
     let url = "http://3.21.225.172:8080/api/"
     $("#Holder1").html("")
     for (let i = 0; i < 90; i++) {
         //define the card to be repeated
         var card =
-            "<div id='poppaDiv"+ [i] +"' class='container bg-white col-md-4'>"+ divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<div id='poppaDiv"+ [i] +"'  class='container color1 col-md-4'>"+ divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
             "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
             data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
-            data[i].zip + "</p></div></div></div></div>"
+            data[i].zip + "</p></div></div></div>"
 
         // console.log(url);
         // console.log(card);
@@ -155,9 +157,9 @@ function filterResults(data) {
 //Since we are basically running the same code as houseCard we can just copy a lot of it
     let pLower = document.getElementById("pLower").value;
     let pUpper = document.getElementById("pUpper").value;
-    let divStart1 = "<div class='container  bg-danger p-3' ><div class='bg-dark p-3'><div class='bg-info'><a href='home_detail.html?";
+    let divStart1 = "<div class='color2 p-3'><div class='bg-info'><a href='home_detail.html?";
     let html1 = "'><img  width='100%' src='";
-    let divStart2 =  " ' ></img></a> </div><div class='bg-primary'>" ;
+    let divStart2 =  " ' ></img></a> </div><div class='color3'>" ;
     let imgStart = "<img width='100%' src='";
     let url = "http://3.21.225.172:8080/api/";
     console.log(pLower);
@@ -175,11 +177,11 @@ window.alert("A minimum and maximum price must be at least 6 digits long.")
     for (let i = 0; i < 90; i++) {
         //define the card to be repeated
         var card =
-            "<div id='poppaDiv"+ [i] +"' class='container bg-white col-4'>"+divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<div id='poppaDiv"+ [i] +"' class='container color1 col-md-4'>"+divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
             "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
             data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
-            data[i].zip + "</p></div></div></div></div>"
+            data[i].zip + "</p></div></div></div>"
 
 
 

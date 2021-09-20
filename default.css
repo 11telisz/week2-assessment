@@ -13,11 +13,35 @@ h3 {
             -0.1em 0 black,
             0 -0.1em black;
 }
+
+
 @keyframes mymove {
     0%{left: 0%;}
     50% {left: 90%;}
     100%{left:0%;}
 }
+.color1 {
+background-color: #659DBD
+}
+.color2 {
+    background-color: #DAAD86;
+
+}
+.color3 {
+    background-color: #BC986A
+}
+.color4 {
+    background-color: #FBEEC1
+}
+.color5 {
+    background-color: #8D8741
+}
+.color6{
+    background-color: #2E2300
+}
+
+
+
 
 #div1 {
     animation-timing-function: linear;
