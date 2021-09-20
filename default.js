@@ -32,22 +32,35 @@ function getData2() {
     };
     // console.log( xhttp)
 };
+function getData4() {
+    //This function is on our filter button since we need to request the data and define it again.
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://3.21.225.172:8080/api/realestate/all");
+    xhttp.send();
+    xhttp.onload = function () {
+        const houseData = JSON.parse(xhttp.responseText);
+        // console.log(houseData);
+        filterResults(houseData);
+    };
+    // console.log( xhttp)
+};
 
 function houseCard(data){
     //Define all reuseable variables that will be pasted as HTML code later
-    let divStart1 = "<div class=\"container bg-danger p-3\" ><div class='bg-dark p-3'><div class='bg-info'><a href='home_detail.html?";
+    let divStart1 = "<div class='container  bg-danger p-3' ><div class='bg-dark p-3'><div class='bg-info'><a href='home_detail.html?";
     let html1 = "'><img  width='100%' src='";
-    let divStart2 =  " ' ></img></a> </div><div class='bg-primary'><p>Price: $" ;
+    let divStart2 =  " ' ></img></a> </div><div class='bg-primary'>" ;
     let imgStart = "<img width='100%' src='";
     let url = "http://3.21.225.172:8080/api/"
+    $("#Holder1").html("")
     for (let i = 0; i < 90; i++) {
         //define the card to be repeated
         var card =
-            divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
-            data[i].price +"</p><p>" + data[i].beds + " Bed    " +
+            "<div id='poppaDiv"+ [i] +"' class='container bg-white col-md-4'>"+ divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
             data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
-            "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].id + " " +
-            data[i].zip +"</p></div></div></div>"
+            "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
+            data[i].zip + "</p></div></div></div></div>"
 
         // console.log(url);
         // console.log(card);
@@ -86,6 +99,7 @@ function houseDetail(data){
     //define the detail page
 
  let lv1 =  window.location.search
+    console.log(lv1)
      let i = lv1.slice(1);
     let rep = data[i].fname + " " + data[i].lname;
     let address = data[i].street + "<br>" + data[i].city + ", " + data[i].state + " " + data[i].zip ;
@@ -135,5 +149,55 @@ function highestPrice(data){
     // $("#address").append(address);
     // $("#yrBlt").append(data[i].yrblt);
 
-}
+};
 
+function filterResults(data) {
+//Since we are basically running the same code as houseCard we can just copy a lot of it
+    let pLower = document.getElementById("pLower").value;
+    let pUpper = document.getElementById("pUpper").value;
+    let divStart1 = "<div class='container  bg-danger p-3' ><div class='bg-dark p-3'><div class='bg-info'><a href='home_detail.html?";
+    let html1 = "'><img  width='100%' src='";
+    let divStart2 =  " ' ></img></a> </div><div class='bg-primary'>" ;
+    let imgStart = "<img width='100%' src='";
+    let url = "http://3.21.225.172:8080/api/";
+    console.log(pLower);
+
+    //here we are checking if our Lower and Upper price fields have at least 5 length ie "500,000" or "999,999" or "000,000"  or 6 digit length
+    if ((pLower.length <= 5) || (pUpper.length <= 5)){
+window.alert("A minimum and maximum price must be at least 6 digits long.")
+    } else{
+   let y=4
+        //First we need to clear the current #Holder1 as it currently has all houses in it
+        $("#Holder1").html("");
+
+
+   //for loop from our previous houseCard()
+    for (let i = 0; i < 90; i++) {
+        //define the card to be repeated
+        var card =
+            "<div id='poppaDiv"+ [i] +"' class='container bg-white col-4'>"+divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
+            data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
+            "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
+            data[i].zip + "</p></div></div></div></div>"
+
+
+
+        //Now that our card is defined and our data is loaded we can start applying our filters to it.
+        //We only want the ones that fail our test. it is a strange use of double negatives
+        // If our price is higher than our highest field then we don't need it, and same for lower
+        if ( (data[i].price > pUpper) || ( data[i].price < pLower)){
+            //If the price is higher or lower, then anything within these brackets will happen
+            //and since we don't need these ones, we don't need anything in here.
+            //The X and log are here for testing only
+            let x = 1;
+            console.log(x);
+        } else{
+            //If price is within our range then we need to display it on our freshly cleared #Holder1
+
+            $("#Holder1").append(card);
+        } ;
+
+    };}
+
+};
