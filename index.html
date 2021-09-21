@@ -6,62 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Taylor Eliszewski">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="default.css">
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Loading my custom CSS sheet-->
+    <link rel="stylesheet" href="default.css">
+
+    <!--Loading my custom JavaScript file-->
     <script src="default.js"></script>
 <style>
 
 </style>
 
 </head>
+
 <body>
-<!-- Comment to make text reactive to scaling.
-.text-responsive {
-  font-size: calc(100% + 1vw + 1vh);
-}
--->
-<!-- Navigation bar information -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
 
-    <a class="navbar-brand" href="index.html">
-        <img src="" alt="logo" style="width:40px;">
-    </a>
+<div class="container">
+    <!-- Navigation bar information -->
+    <nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
 
-    <ul class="navbar-nav">
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="home_detail.html">Home Detail test page</a>-->
-<!--        </li>-->
-        <li class="nav-item">
-            <a class="nav-link" href="listing.html">Listing Search</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="testimonials.html">Testimonials</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="about_us.html">About Us</a>
-        </li>
-    </ul>
-</nav>
+        <a class="navbar-brand" href="index.html">
+            <img src="logoSmall.png" alt="logo" width="100%" style="height:40px">
+        </a>
+
+        <ul class="navbar-nav">
+            <!--Testing link for detail page-->
+            <!--        <li class="nav-item">-->
+            <!--            <a class="nav-link" href="home_detail.html">Home Detail test page</a>-->
+            <!--        </li>-->
+            <li class="nav-item">
+                <a class="nav-link" href="listing.html">Listing Search</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about_us.html">About Us</a>
+            </li>
+        </ul>
+    </nav>
+</div>
 
 
-<!-- Jumbo info -->
-<div class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-        <h1>Find your perfect home!</h1>
-        <p>Let us help you find your dream home!</p>
+
+<!-- Banner info -->
+<!--One banner was made on the index page and copied to all pages to ensure accuracy-->
+<div class="my-5">
+    <div class="centerContainer my-5 bg-Img" >
+        <img src="Banner.jpg" width="100%" height="300px">
+        <div class="centered my-5">
+            <h1 id="h1Head">Find your Dream home!</h1>
+            <h1 id="h2Head">With Ski Realty, it's like trying the Bunny hill.</h1>
+            <div class="container pb-5">
+            </div>
+        </div>
     </div>
 </div>
+
 <!-- First Div tag is for the most expensive house listing preview-->
-<div class="container bg-light">
+<div class="container my-5 color2">
     <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
             <p id="imgExpensive">Placeholder for most expensive listing image</p>
         </div>
-        <div class="col-8 ">
-            <p>Here is some quick information about this house</p>
+        <div class="col-md-8 ">
+            <p>Here is some quick information about this house.</p>
             <table class="table">
                 <tbody>
                 <tr>
@@ -106,24 +120,30 @@
 <!-- These 2 Div columns are to hold the buying and sell sections on the main page-->
 <div class="container">
     <div class="row mb-5">
-        <div class="col-6 bg-primary">
+        <div class="col-md-6 color2">
 
             <p>In the market to buy a house?
             <br>
             Use our free estimation tool and find what's right for you!</p>
             <br>
-            <div class="bg-info" style="width:240px; text-align:center;"><p style="text-align:center;">
-                <a href="https://www.mortgagecalculator.biz/" target="_blank"><img src="https://www.mortgagecalculator.biz/img/mlogo.gif" border="0" alt="loan amortization calculator"/></a>
-                <br/><iframe src="https://www.mortgagecalculator.biz/c/minicalc.php" frameborder="0" width="200px" height="300px" scrolling="no"></iframe><br/>
 
+<!--Calculator from another site using iframe-->
+            <div style="width:400px; position:relative;">
+                <iframe src ="https://www.mortgagecalculator.net/embeddable/v2/?size=5&textColor=003140&backgroundColor=e7f0f3" width="100%" frameborder=0 scrolling=no height=330></iframe>
             </div>
+
+            <!--           <div class="color3" style="width:240px; text-align:center;"><p style="text-align:center;">-->
+<!--                <a href="https://www.mortgagecalculator.biz/" target="_blank"><img src="https://www.mortgagecalculator.biz/img/mlogo.gif" border="0" alt="loan amortization calculator"/></a>-->
+<!--                <br/><iframe src="https://www.mortgagecalculator.biz/c/minicalc.php" frameborder="0" width="200px" height="300px" scrolling="no"></iframe><br/>-->
+
+<!--            </div>-->
 
 
 
 
         </div>
 
-        <div class="col-6 bg-info">
+        <div class="col-md-6 color3">
             <p>Looking to sell your house?</p>
             <p>Fill out the form below, and we still send you a free quote!</p>
             <br>
@@ -149,9 +169,21 @@
 </div>
 
 <!-- Start of the Why Us section -->
-<div class="container bg-success">
-    <div class="container">
-        <p>Place holder text for why us</p>
+<div class="container my-4 color1">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="SadDog.jpg" width="100%">
+        </div>
+        <div class="col-md-6">
+            <p class="thick">This puppy's stare shall assist in all negotiations!</p>
+            <p>Ready for more place-holder text?</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id eu nisl nunc mi ipsum faucibus. Sit amet commodo nulla facilisi nullam vehicula. Vitae auctor eu augue ut lectus arcu bibendum at. Urna id volutpat lacus laoreet. Mattis molestie a iaculis at erat pellentesque. Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat. Feugiat in ante metus dictum at. Tellus pellentesque eu tincidunt tortor aliquam nulla. Et tortor consequat id porta nibh venenatis cras sed felis. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare. Mi bibendum neque egestas congue. Aliquam vestibulum morbi blandit cursus risus at ultrices. Malesuada fames ac turpis egestas sed tempus urna et pharetra. Risus nec feugiat in fermentum posuere urna nec. Odio tempor orci dapibus ultrices in iaculis. Laoreet sit amet cursus sit amet dictum sit amet. Vitae et leo duis ut.
+
+                Nec nam aliquam sem et tortor consequat id. Maecenas ultricies mi eget mauris pharetra et. Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Sed id semper risus in. Eu mi bibendum neque egestas congue quisque egestas diam in. A scelerisque purus semper eget duis. Eget lorem dolor sed viverra ipsum nunc aliquet. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Vulputate dignissim suspendisse in est ante in nibh mauris cursus. Et pharetra pharetra massa massa ultricies mi. Varius morbi enim nunc faucibus a pellentesque. Varius duis at consectetur lorem donec. Dignissim diam quis enim lobortis scelerisque fermentum dui.
+            </p>
+        </div>
+
     </div>
 
 </div>
@@ -171,21 +203,27 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
+                        <a href="testimonials.html">
                         <img src="House-1.jpg" alt="Erik and Sue" width="1100" height="500">
+                        </a>
                         <div class="carousel-caption">
                             <h3>Erik and Sue</h3>
                             <p>"Easiest home-buying experience ever!"</p>
                         </div>
                     </div>
                     <div class="carousel-item">
+                        <a href="testimonials.html">
                         <img src="House-2.jpg" alt="BobCat" width="1100" height="500">
+                        </a>
                         <div class="carousel-caption">
                             <h3>Robert "the BobCat"</h3>
                             <p>"I choose this as my house now."</p>
                         </div>
                     </div>
                     <div class="carousel-item">
+                        <a href="testimonials.html">
                         <img src="House-3.jpg" alt="Rachel" width="1100" height="500">
+                        </a>
                         <div class="carousel-caption">
                             <h3>Rachel</h3>
                             <p>"Helped take all the stress out of it!"</p>
@@ -212,8 +250,8 @@ getData3();
 </body>
 
 <footer>
-    <div class="jumbotron jumbotron-fluid text-center">
-        <p>Look at my feeter!</p>
+    <div class="color5 p-4 mt-4 text-center">
+        <p>We will sell you the whole seat, but you may only need the edge!!!!!!!</p>
     </div>
 </footer>
 </html>

@@ -48,31 +48,29 @@ function getData4() {
 };
 
 function houseCard(data){
-    //Define all reuseable variables that will be pasted as HTML code later
-    let divStart1 = "<div class='color2  p-3'><div class='bg-info'><a href='home_detail.html?";
+    //Define all re-useable variables that will be pasted as HTML code later
+    let divStart1 = "<div class=' color2  my-4 p-3'><div class='bg-info'><a href='home_detail.html?";
     let html1 = "'><img  width='100%' src='";
     let divStart2 =  " ' ></img></a> </div><div class='color3 '>" ;
     let imgStart = "<img width='100%' src='";
-    let url = "http://3.21.225.172:8080/api/"
-    $("#Holder1").html("")
+    let url = "http://3.21.225.172:8080/api/";
+    $("#Holder1").html("");
+    $("#pLower").val("");
+    $("#pUpper").val("");
     for (let i = 0; i < 90; i++) {
-        //define the card to be repeated
+        //define the card to be repeated using html as String and integrating our changing variables
         var card =
-            "<div id='poppaDiv"+ [i] +"'  class='container color1 col-md-4'>"+ divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<div id='poppaDiv"+ [i] +"'  class='container  col-md-4'>"+ divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
             "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
             data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
             data[i].zip + "</p></div></div></div>"
 
+
         // console.log(url);
         // console.log(card);
         $("#Holder1").append(card);
-    }
-
-    // console.log(card);
-    // $("#Holder1").append(card);
-
-
+    };
 }
 
 function houseCard2(data){
@@ -157,7 +155,7 @@ function filterResults(data) {
 //Since we are basically running the same code as houseCard we can just copy a lot of it
     let pLower = document.getElementById("pLower").value;
     let pUpper = document.getElementById("pUpper").value;
-    let divStart1 = "<div class='color2 p-3'><div class='bg-info'><a href='home_detail.html?";
+    let divStart1 = "<div class='color2 my-4 p-3'><div class='bg-info'><a href='home_detail.html?";
     let html1 = "'><img  width='100%' src='";
     let divStart2 =  " ' ></img></a> </div><div class='color3'>" ;
     let imgStart = "<img width='100%' src='";
@@ -177,13 +175,11 @@ window.alert("A minimum and maximum price must be at least 6 digits long.")
     for (let i = 0; i < 90; i++) {
         //define the card to be repeated
         var card =
-            "<div id='poppaDiv"+ [i] +"' class='container color1 col-md-4'>"+divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
+            "<div id='poppaDiv"+ [i] +"' class='container col-md-4'>"+divStart1 + [i] + html1 + url + data[i].imageurl + divStart2 +
             "<p type='value' id='price"+ [i] +"'>" +data[i].price +"</p><p>" + data[i].beds + " Bed    " +
             data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].state + " " +
             data[i].zip + "</p></div></div></div>"
-
-
 
         //Now that our card is defined and our data is loaded we can start applying our filters to it.
         //We only want the ones that fail our test. it is a strange use of double negatives

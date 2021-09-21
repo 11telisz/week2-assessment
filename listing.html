@@ -16,7 +16,7 @@
 
     <style>
         p {
-            color: white;
+            color: black;
         }
     </style>
 </head>
@@ -24,16 +24,13 @@
 
 
 <!-- Navigation bar information -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+<nav class="navbar navbar-expand bg-dark navbar-dark fixed-top">
 
     <a class="navbar-brand" href="index.html">
-        <img src="" alt="logo" style="width:40px;">
+        <img src="logoSmall.png" alt="logo" width="100%" style="height:40px;">
     </a>
 
     <ul class="navbar-nav">
-<!--        <li class="nav-item">-->
-<!--            <a class="nav-link" href="home_detail.html">Home Detail test page</a>-->
-<!--        </li>-->
         <li class="nav-item">
             <a class="nav-link" href="listing.html">Listing Search</a>
         </li>
@@ -46,282 +43,42 @@
     </ul>
 </nav>
 <!-- Company banner -->
-<div class="jumbotron">
-    <p>Some placeholder text</p>
+<div class="my-5">
+    <div class="centerContainer my-5 bg-Img" >
+        <img src="Banner.jpg" width="100%" height="300px">
+        <div class="centered my-5">
+            <h1>Welcome to our listings page</h1>
+            <div class="container pb-5">
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Nav bar for searching -->
-<div class="navbar bg-light">
+<div class="navbar color6">
     <form class="form-inline" >
         <input class="form-control mr-sm-2" type="number" placeholder="Price:Lower" id="pLower" value="">
         <input class="form-control mr-sm-2" type="number" placeholder="Price:Upper" id="pUpper" value="">
         <button class="btn btn-success" type="button" onclick="getData4()">Filter</button>
-        <button class="btn btn-success" type="button" onclick="getData1()">Clear filter</button>
+        <button class="btn btn-danger" type="button" onclick="getData1()">Reset Search</button>
     </form>
 </div>
-<!-- Comment template -->
 
-<div class="container border">
-    <!-- First row -->
-    <div class="row bg-primary" id="Holder1">
-<!--        &lt;!&ndash; First column &ndash;&gt;-->
-<!--        <div class="col bg-white" >-->
-            <!-- First Card Holder -->
-<!--            <div class="container bg-danger p-3" >-->
-<!--                </div>-->
+<!--Container to hold all of our cards-->
+<div class="container">
+    <div class="row" id="Holder1">
+        <!-- Everything inside-of this div tag will be over-written and appended with our JavaScript -->
             </div>
         </div>
     </div>
 </div>
 
-
-
-<!--&lt;!&ndash; First div holder for results &ndash;&gt;-->
-<!--<div class="container border">-->
-<!--    &lt;!&ndash; First row &ndash;&gt;-->
-<!--    <div class="row bg-primary">-->
-<!--        &lt;!&ndash; First column &ndash;&gt;-->
-<!--        <div class="col bg-white ">-->
-<!--            &lt;!&ndash; First Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3" id="Holder2">-->
-<!--                &lt;!&ndash; First Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2" id="card1">-->
-<!--                    &lt;!&ndash; First Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info" type="button" onclick="detailLink(this.id)">-->
-<!--                        <p id="img1">Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; First Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p id="price1">Price: </p>-->
-<!--                        <p id="bed1">Bed: </p>-->
-<!--                        <p id="bath1">Bath: </p>-->
-<!--                        <p id="sqft1">Sq. Ft. : </p>-->
-<!--                        <p id="address1">Located: </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-
-<!--        </div>-->
-<!--        &lt;!&ndash; Second Column &ndash;&gt;-->
-<!--        <div class="col-4 bg-white">-->
-<!--            &lt;!&ndash; Second Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3">-->
-<!--                &lt;!&ndash; First Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2">-->
-<!--                    &lt;!&ndash; First Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info">-->
-<!--                        <p>Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; First Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p>Placeholder Summary text</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--        &lt;!&ndash; Third Column &ndash;&gt;-->
-<!--        <div class="col-4 bg-white">-->
-<!--            &lt;!&ndash; Third Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3">-->
-<!--                &lt;!&ndash; Third Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2">-->
-<!--                    &lt;!&ndash; Third Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info">-->
-<!--                        <p>Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Third Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p>Placeholder Summary text</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
-
-<!--    </div>-->
-<!--    &lt;!&ndash; Second Row &ndash;&gt;-->
-<!--    <div class="row">-->
-<!--        &lt;!&ndash; First Column &ndash;&gt;-->
-<!--        <div class="col-4 bg-white">-->
-<!--            &lt;!&ndash; First Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3">-->
-<!--                &lt;!&ndash; First Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2">-->
-<!--                    &lt;!&ndash; First Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info">-->
-<!--                        <p>Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; First Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p>Placeholder Summary text</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Second Column &ndash;&gt;-->
-<!--        <div class="col-4 bg-white">-->
-<!--            &lt;!&ndash; Second Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3">-->
-<!--                &lt;!&ndash; Second Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2">-->
-<!--                    &lt;!&ndash; Second Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info">-->
-<!--                        <p>Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Second Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p>Placeholder Summary text</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Third Column &ndash;&gt;-->
-<!--        <div class="col-4 bg-white">-->
-<!--            &lt;!&ndash; Third Card Holder &ndash;&gt;-->
-<!--            <div class="container bg-danger p-3">-->
-<!--                &lt;!&ndash; Third Card &ndash;&gt;-->
-<!--                <div class="container bg-dark p-2">-->
-<!--                    &lt;!&ndash; Third Card Picture &ndash;&gt;-->
-<!--                    <div class="container bg-info">-->
-<!--                        <p>Place holder text for image</p>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Third Card Summary &ndash;&gt;-->
-<!--                    <div class="container bg-primary">-->
-<!--                        <p>Placeholder Summary text</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; End of Search results&ndash;&gt;-->
-
-<!--    <div class="container">-->
-<!--        <ul class="pagination ">-->
-<!--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--            <li class="page-item active"><a class="page-link" href="#">2</a></li>-->
-<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--            <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-
-<!--</div>-->
 <script>
-//     function getData() {
-//         let xhttp = new XMLHttpRequest();
-//         xhttp.open("GET", "http://3.21.225.172:8080/api/realestate/all");
-//         xhttp.send();
-//         xhttp.onload = function() {
-//             const houseData = JSON.parse(xhttp.responseText);
-//            // console.log(houseData);
-//             houseCard(houseData)
-//         };
-//        // console.log( xhttp)
-//     };
-//
-// function houseCard(data){
-//     //Define all reuseable variables that will be pasted as HTML code later
-//     let divStart1 = "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='";
-//     let divStart2 = " ' </div><div class='bg-primary'><p>Price: $";
-//     let imgStart = "<img width='100%' src='";
-//     let url = "http://3.21.225.172:8080/api/"
-//     for (let i = 0; i < 90; i++) {
-//         //define the card to be repeated
-//         var card =
-//             "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='"+ url + data[i].imageurl +
-//             " ' </div><div class='bg-primary'><p>Price: $" +
-//             data[i].price +"</p><p>" + data[i].beds + " Bed    " +data[i].baths + " Bath  " + data[i].sqft+ " Sq.ft</p>" +
-//             "<p>" + data[i].street + "<br>"+ data[i].city + ", " + data[i].id + " " + data[i].zip +"</p></div></div>"
-//
-// console.log(url);
-//         console.log(card);
-//         $("#Holder1").append(card);
-//     }
-//
-//     // console.log(card);
-    // $("#Holder1").append(card);
-
-
 getData1();
-//getData3();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function update_data()
-    { //// const record_count = parseInt(document.getElementById("num_rec").value);
-        const url = "http://3.21.225.172:8080/api/";
-
-        $.getJSON( url + "realestate/all")
-            .done(function( data ) {
-                console.log(data);
-                // $("#fname").html(item.fname);
-                $.each( data, function( i, item ) {
-                    //Define the card variable
-                    console.log(item);
-                    // let PH1IMG = item.fname;
-                    // $("#PH1Image").html(PH1IMG);
-// use a for loop to create the cards using the i as the number in array
-//                      //do stuff in these brackets as the JSON stuff is loaded in the parent
-//                      //of this one. We are able to manipulate specific values from here and do
-//                      //my placeholder update stuffs
-                     var card =
-                         "<div class='bg-dark p-3'><div class='bg-info'><img width='100%' src='"+
-                         url + item.imageurl +
-                         " ' </div><div class='bg-primary'><p>Price: $" +
-                         item.price +"</p><p>" + item.beds + " Bed    " +item.baths + " Bath  " + item.sqft+ " Sq.ft</p>" +
-                         "<p>" + item.street + "<br>"+ item.city + ", " + item.state + " " + item.zip +"</p></div></div>"
-
-                         //
-                         // //Previous testing code
-                         // "<td>" + item.fname + "</td>" +
-                         // "<td>" + item.lname + "</td>" +
-                         // "<td>" + item.yrblt + "</td>" +
-                         // "<td>" + item.isnew + "</td>" +
-                         // "<td>" + item.sqft + "</td>" +
-                         // "<td>" + item.baths + "</td>" +
-                         // "<td>" + item.beds + "</td>" +
-                         // "<td>" + item.street + "</td>" +
-                         // "<td>" + item.city + "</td>" +
-                         // "<td>" + item.state + "</td>" +
-                         // "<td>" + item.zip + "</td>" +
-                         // "<td>" + item.state + "</td>" +
-                         // "<td>" + item.phone + "</td>" +
-                         // "<td>" + item.price + "</td>" +
-                         // // "<td><img width=100 height=100 src='" +
-                         // // url +
-                         // // item.imageurl + "'/></td>";
-
-                    $("#Holder1").html(card);
-
-
-                }); <!--End of the .each -->
-
-
-
-
-
-            });
-
-
-    }
-   // update_data();
-
 </script>
 </body>
+<footer>
+    <div class="color5 p-4 mt-4 text-center">
+        <p>We will sell you the whole seat, but you may only need the edge!!!!!!!</p>
+    </div>
+</footer>
 </html>

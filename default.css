@@ -4,6 +4,19 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+h1{
+    font-size: calc(80% + 1vw + 1vh);
+}
+
+.text-responsive {
+    font-size: calc(100% + 1vw + 1vh);
+}
+
+p.thick {
+    font-weight: bold;
+    font-size: larger;
+}
+
 h3 {
     color: white;
 
@@ -15,11 +28,7 @@ h3 {
 }
 
 
-@keyframes mymove {
-    0%{left: 0%;}
-    50% {left: 90%;}
-    100%{left:0%;}
-}
+
 .color1 {
 background-color: #659DBD
 }
@@ -40,13 +49,70 @@ background-color: #659DBD
     background-color: #2E2300
 }
 
+.bg-Img{
+    /*background-image: url("Banner.jpg");*/
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-repeat: no-repeat;
 
+}
 
+.centerContainer {
+     position: relative;
+     text-align: center;
+     color: white;
+ }
 
-#div1 {
-    animation-timing-function: linear;
+.centered {
     position: absolute;
-    animation: mymove 5s infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes mymove {
+    0%{left: 0%;}
+    40%{transform: rotateY(0deg)}
+    50% {left: 90%;transform: rotateY(180deg)}
+    90%{transform: rotateY(180deg)}
+    100%{left:0%;transform: rotateY(0deg)}
+}
+@keyframes headAnimation1 {
+    0%{opacity: 100%;}
+    40%{opacity: 100%;}
+    50% {opacity: 0%;}
+    90% {opacity: 0%;}
+    100%{opacity:100%;}
+}
+@keyframes headAnimation2 {
+    0%{opacity: 0%;}
+    40%{opacity: 0%;}
+    50% {opacity: 100%;}
+    90% {opacity: 100%;}
+    100%{opacity:0%;}
+}
+
+#h1Head{
+    animation: headAnimation1 15s infinite;
+    text-align: center;
+}
+#h2Head{
+    /*opacity: 0%;*/
+    text-align: center;
+
+    animation: headAnimation2 15s infinite;
+
+    /*animation-delay: 2s;*/
+
+}
+div.a{
+    text-align: center;
+}
+#div1 {
+    /*animation-timing-function: linear;*/
+    position: absolute;
+    animation: mymove 10s infinite;
 }
 
 .carousel-fade .carousel-item {
@@ -73,4 +139,13 @@ background-color: #659DBD
 .carousel-fade .active.carousel-item-prev {
     transform: translateX(0);
     transform: translate3d(0, 0, 0);
+}
+.jumbotron{
+    background-image: url("Banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: local;
+
+
 }
